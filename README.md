@@ -12,6 +12,36 @@ $ docker run --device /dev/vchiq -p 80:8081 -p 8080:8080 -v /home/pi:/home/pi jr
 
 or using docker-compose...
 
+## Ensure that you installed Docker Compose
+
+You can install Docker compose using pip
+
+```
+pip install docker-compose
+```
+
+In case you face the below issue:
+
+```
+python setup.py egg_info" failed with error code 1 in /tmp/pip-build-BqMhb7/matplotlib/
+```
+
+Try to run the below command:
+
+```
+root@node1:~# pip install --upgrade setuptools
+Collecting setuptools
+  Downloading https://files.pythonhosted.org/packages/c8/b0/cc6b7ba28d5fb790cf0d5946df849233e32b8872b6baca10c9e002ff5b41/setuptools-41.0.0-py2.py3-none-any.whl (575kB)
+    100% |████████████████████████████████| 583kB 180kB/s
+Installing collected packages: setuptools
+  Found existing installation: setuptools 33.1.1
+    Not uninstalling setuptools at /usr/lib/python2.7/dist-packages, outside environment /usr
+Successfully installed setuptools-41.0.0
+
+```
+
+By now, it should get installed.
+
 ```yaml
 motion:
   container_name: driveway-motion
